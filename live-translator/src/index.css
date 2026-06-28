@@ -9,12 +9,12 @@
   --border-color: #e5e7eb;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px -5px rgba(16, 185, 129, 0.15), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
 
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--text-dark);
-  background-color: #f9fafb;
 }
 
 body {
@@ -23,24 +23,40 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 50%, #eff6ff 100%);
 }
 
 .translator-container {
   background: var(--bg-white);
   padding: 2.5rem;
   border-radius: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   max-width: 600px;
   width: 90%;
   text-align: center;
   border: 1px solid var(--border-color);
 }
 
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
 h2 {
   color: var(--primary-green);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin: 0;
   font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 h4 {
@@ -64,9 +80,34 @@ p {
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: background 0.2s ease;
+}
+
+.status-dot.active {
+  background: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
 }
 
 button {
@@ -183,4 +224,10 @@ button {
   font-size: 1.25rem;
   font-weight: 600;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 0.25s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }

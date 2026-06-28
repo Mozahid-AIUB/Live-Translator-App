@@ -90,7 +90,15 @@ export default function App() {
 
   return (
     <div className="translator-container">
-      <h2>Live Video Translator</h2>
+      <div className="app-header">
+        <h2>Live Video Translator</h2>
+        <p className="app-subtitle">Real-time English ⇄ Finnish speech translation</p>
+      </div>
+
+      <div className="status-row">
+        <span className={`status-dot ${listening ? "active" : ""}`} />
+        {listening ? "Listening..." : "Idle"}
+      </div>
 
       <div className="button-group">
         <button 

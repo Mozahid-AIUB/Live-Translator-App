@@ -278,4 +278,22 @@ gemini
 > Give me a summary of all of the changes that went in yesterday
 ```
 
+---
+
+## ✅ Homework Tweak Log
+
+The `live-translator/` (React) app was tweaked for a more polished, production-feel UI:
+
+- Added an app header with a subtitle describing the tool
+- Added a live "Listening..." status indicator with a pulsing dot
+- Added a soft gradient page background and stronger card shadow for visual depth
+- Added a subtle fade-in animation on new translated subtitles
+
+Run it with:
+
+```bash
+cd live-translator
+npm install
+npm run dev
+```
 
